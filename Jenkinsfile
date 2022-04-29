@@ -21,11 +21,12 @@ pipeline {
         }
         stage('reading from library'){
         environment {
-                        test_creds = credentials('test')
+                        TEST_CREDS = credentials('test')
                     }
         steps{
             displayMessage "cool user"
-            echo "${test_creds}"
+            echo 'USER: $TEST_CREDS_USR'
+            echo 'PSWD: $TEST_CREDS_PSW'
 
 //             withCredentials([usernameColonPassword(credentialsId: 'test', variable: 'demouser')]) {
 //               echo "${credentialsId}"
