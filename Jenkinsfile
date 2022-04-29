@@ -7,6 +7,7 @@ pipeline {
        stage('python exec'){
        steps {
        script{
+        steps.findFiles('/resources/main.py')
        CommandInterface cmd = new DisplayMessage()
        cmd.setSteps(this)
        cmd.execute()
