@@ -9,7 +9,7 @@ pipeline {
        script{
         //this.findFiles('/resources/main.py')
         sh 'echo hello'
-       string cmd= this.libraryResource('/resources/main.py')
+       string cmd= this.libraryResource('~/resources/main.py')
        sh 'python cmd'
        //CommandInterface cmd = new DisplayMessage()
        //cmd.setSteps(this)
