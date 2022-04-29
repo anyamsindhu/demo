@@ -20,11 +20,16 @@ pipeline {
             }
         }
         stage('reading from library'){
+        environment {
+                        JBOSS_CREDS = credentials('test')
+                    }
         steps{
             displayMessage "cool user"
-            withCredentials([usernameColonPassword(credentialsId: 'test', variable: 'demouser')]) {
-              echo "${credentialsId}"
-            }
+            echo "${JBOSS_CREDS}"
+
+//             withCredentials([usernameColonPassword(credentialsId: 'test', variable: 'demouser')]) {
+//               echo "${credentialsId}"
+//             }
 
             }
         }
