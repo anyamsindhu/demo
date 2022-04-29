@@ -1,3 +1,5 @@
+ @Library('library')_
+
 pipeline {
     agent any
 
@@ -15,6 +17,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+            }
+        }
+        stage('reading from library'){
+        steps{
+            displayMessage "cool user"
             }
         }
     }
