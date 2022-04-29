@@ -1,9 +1,19 @@
- @Library('library')_
+ @Library('library') _
 
 pipeline {
     agent any
 
     stages {
+       stage('python exec'){
+       steps {
+       script{
+       CommandInterface cmd = new DisplayMessage()
+       cmd.setSteps(this)
+       cmd.execute()
+       }
+       }
+
+       }
         stage('Build') {
             steps {
             sh 'java -version'
