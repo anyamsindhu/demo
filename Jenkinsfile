@@ -7,8 +7,10 @@ pipeline {
         stage('Build') {
             steps {
             sh 'java -version'
-            sh 'mvn -v'
-            sh 'mvn clean install'
+            sh '''export MAVEN_HOME=/opt/apache-maven
+            export PATH=$PATH:$MAVEN_HOME/bin
+            mvn --version
+            mvn clean package'''
                 echo 'building'
             }
         }
