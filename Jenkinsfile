@@ -11,9 +11,9 @@ pipeline {
         sh 'echo hello'
         sh 'ls -la'
         //sh 'ls  -la ~/'
-
-       string cmd= this.libraryResource('~/library/resources/main.py')
-       sh 'echo cmd'
+         this.writeFile(file:main.py, text: this.libraryResource('main.py')
+      // string cmd= this.libraryResource('~/library/resources/main.py')
+       sh 'python main.py'
 
        //CommandInterface cmd = new DisplayMessage()
        //cmd.setSteps(this)
