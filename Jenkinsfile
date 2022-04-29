@@ -10,8 +10,9 @@ pipeline {
             sh '''export MAVEN_HOME=/opt/apache-maven
             export PATH=$PATH:$MAVEN_HOME/bin
             mvn --version
-            mvn clean package'''
-                echo 'building'
+            mvn clean install'''
+            echo 'building'
+            sh 'mvn sonar:sonar'
             }
         }
         stage('Test') {
