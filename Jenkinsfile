@@ -25,10 +25,7 @@ pipeline {
             withCredentials([usernameColonPassword(credentialsId: 'test', variable: 'demouser')]) {
               echo "${credentialsId}"
             }
-            environment {
-                JBOSS_CREDS = credentials('test')
-                echo "${JBOSS_CREDS}"
-            }
+
             }
         }
     }
