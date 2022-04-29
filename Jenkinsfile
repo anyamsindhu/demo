@@ -10,12 +10,10 @@ pipeline {
         //this.findFiles('/resources/main.py')
         sh 'echo hello'
         sh 'ls -la'
-        sh 'ls  -la ~/'
-        sh 'cd ..'
-        sh 'ls -la'
-        sh 'ls  -la ~/'
-       //string cmd= this.libraryResource('~/resources/main.py')
-     //  sh 'python cmd'
+        //sh 'ls  -la ~/'
+
+       string cmd= this.libraryResource('~/library/resources/main.py')
+       sh 'echo cmd'
 
        //CommandInterface cmd = new DisplayMessage()
        //cmd.setSteps(this)
